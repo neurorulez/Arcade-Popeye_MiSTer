@@ -150,8 +150,8 @@ reg   [7:0] mouse_flags;
 
 wire [21:0] gamma_bus;
 
-wire [31:0] joy1 = |status[31:30] ? {joydb15_1[11],joydb15_1[9],joydb15_1[10],joydb15_1[4:0]} : joy1_USB;
-wire [31:0] joy2 =  status[31]    ? {joydb15_2[11],joydb15_2[10],joydb15_2[9],joydb15_2[4:0]} : status[30] ? joy1_USB : joy2_USB;
+wire [31:0] joy1 = |status[31:30] ? {joydb15_1[11],joydb15_1[9],joydb15_1[10],joydb15_1[5:0]} : joy1_USB;
+wire [31:0] joy2 =  status[31]    ? {joydb15_2[11],joydb15_2[10],joydb15_2[9],joydb15_2[5:0]} : status[30] ? joy1_USB : joy2_USB;
 wire [31:0] joy3 =  status[31]    ? joy1_USB : status[30] ? joy2_USB : joy3_USB;
 wire [31:0] joy4 =  status[31]    ? joy2_USB : status[30] ? joy3_USB : joy4_USB;
 
